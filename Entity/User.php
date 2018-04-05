@@ -11,7 +11,7 @@ use TinyORM\ActiveRecord;
  * @property $id
  *
  */
-class  User extends ActiveRecord
+class User extends ActiveRecord
 {
     static $tableName = 'users';
 
