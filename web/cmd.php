@@ -10,15 +10,19 @@ $conn = new \TinyORM\Base\Connection('root', 'password', 'orm_test');
 $conn->connect();
 \TinyORM\ActiveRecord::setConnection($conn);
 
-//$user = \Entity\User::findByFields(['id' => 11, 'name' => 'change me']);
-$user = new \Entity\User();
+$user = \Entity\User::findByFields(['id' => 11, 'name' => 'change me']);
+//$user = new \Entity\User();
 
 
-
-if($user){
+if ($user) {
     $user
-        ->setName('id tests')
+        ->setName('setName')
         ->save();
+
+    $user
+        ->setLastName('setLastName')
+        ->save();
+
     var_export('success');
 } else {
     var_export(' not found');
