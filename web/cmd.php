@@ -10,14 +10,18 @@ $conn = new \TinyORM\Base\Connection('root', 'password', 'orm_test');
 $conn->connect();
 \TinyORM\ActiveRecord::setConnection($conn);
 
-$user = \Entity\User::findByFields(['id'=>11,'name'=>'change me']);
-//
-//if($user){
-//    $user
-//        ->setName('change me')
-//        ->save();
-//    var_export('success');
-//} else {
-//    var_export(' not found');
-//}
+//$user = \Entity\User::findByFields(['id' => 11, 'name' => 'change me']);
+$user = new \Entity\User();
+
+
+
+if($user){
+    $user
+        ->setName('id tests')
+        ->save();
+    var_export('success');
+} else {
+    var_export(' not found');
+}
+
 var_export($user);
